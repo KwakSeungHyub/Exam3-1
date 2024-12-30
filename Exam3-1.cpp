@@ -50,7 +50,7 @@ public:
     // operator[]: 배열처럼 원소를 인덱스를 통해 접근 (쓰기 가능)
     T& operator[](size_t index) {
         if (index >= size_1) {
-            throw std::out_of_range("Index out of range");
+            throw std::out_of_range("벡터 사이즈보다 큽니다");
         }
         return data[index];
     }
@@ -58,7 +58,7 @@ public:
     // const operator[]: const 버전의 인덱스 접근 (읽기 전용)
     const T& operator[](size_t index) const {
         if (index >= size_1) {
-            throw std::out_of_range("Index out of range");
+            throw std::out_of_range("벡터 사이즈보다 큽니다.");
         }
         return data[index];
     }
@@ -75,7 +75,7 @@ int main() {
     vec.push_back(19);
 
     // 벡터 원소 출력
-    std::cout << "Vector elements: ";
+    std::cout << "벡터의 원소들: ";
     for (size_t i = 0; i < vec.size(); ++i) {
         std::cout << vec[i] << " ";
     }
@@ -83,7 +83,7 @@ int main() {
 
     // 맨 끝 원소 제거
     vec.pop_back();
-    std::cout << "After pop_back, size: " << vec.size() << std::endl;
+    std::cout << "pop_back 실행 이후, 사이즈는: " << vec.size() << std::endl;
 
     // double 타입의 SimpleVector 생성 (크기 5)
     SimpleVector<double> doubleVec(5);
@@ -91,7 +91,7 @@ int main() {
     doubleVec.push_back(2.71);
 
     // double 벡터 원소 출력
-    std::cout << "Double Vector elements: ";
+    std::cout << "Double Vector의 원소들: ";
     for (size_t i = 0; i < doubleVec.size(); ++i) {
         std::cout << doubleVec[i] << " ";
     }
